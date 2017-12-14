@@ -16,4 +16,9 @@ public class HomeController {
         return "home";
     }
 
+    @GetMapping("/reactive")
+    public String react(){
+        return "reactive";
+    }
+
 }
