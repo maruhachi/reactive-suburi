@@ -14,11 +14,14 @@ public class ReactiveSuburiRepository {
 
     public Flux<String> getReactive(){
 
+        System.out.println("ReactiveSuburiRepository : getReactive()");
+
         // refer: https://goo.gl/bgDNo1
         WebClient client = WebClient.create("http://localhost:8080");
 
+        // 自分自身のストリームなレスポンスを返すエンドポイントへ飛ばす
         Flux<String> flux = client.get()
-                .uri("/reactive2")
+                .uri("/slowly")
                 .accept(MediaType.TEXT_EVENT_STREAM)
                 .retrieve()
                 .bodyToFlux(String.class);
