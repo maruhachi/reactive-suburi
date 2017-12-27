@@ -1,4 +1,4 @@
-# やったこと
+# mongoサーバ構築 やったこと
 
 ## ミドルウェアのインストール
 
@@ -13,8 +13,12 @@
 # vi /etc/yum.repos.d/mongodb-org-3.6.repo
 # yum install mongodb-org
 Installing:
- mongodb-org                x86_64         3.6.0-1.el7           mongodb-org-3.6         5.8 k Installing for dependencies:
- mongodb-org-mongos         x86_64         3.6.0-1.el7           mongodb-org-3.6          12 M  mongodb-org-server         x86_64         3.6.0-1.el7           mongodb-org-3.6          20 M  mongodb-org-shell          x86_64         3.6.0-1.el7           mongodb-org-3.6          12 M  mongodb-org-tools          x86_64         3.6.0-1.el7           mongodb-org-3.6          46 M
+ mongodb-org                x86_64         3.6.0-1.el7           mongodb-org-3.6         5.8 k
+Installing for dependencies:
+ mongodb-org-mongos         x86_64         3.6.0-1.el7           mongodb-org-3.6          12 M
+ mongodb-org-server         x86_64         3.6.0-1.el7           mongodb-org-3.6          20 M  
+ mongodb-org-shell          x86_64         3.6.0-1.el7           mongodb-org-3.6          12 M  
+ mongodb-org-tools          x86_64         3.6.0-1.el7           mongodb-org-3.6          46 M
 
 # service mongod start
 # tail -n 5 /var/log/mongodb/mongod.log
@@ -32,6 +36,13 @@ Installing:
 
 ```bash
 # systemctl stop firewalld
-# systemctl ddisable firewalld
+# systemctl disable firewalld
 ```
 
+## Mongoの簡易管理画面
+```bash
+# npm install admin-mongo
+# cd node_module/admin-mongo
+# npm install
+# nohup npm start > log 2>&1 & 
+```

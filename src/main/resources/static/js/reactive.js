@@ -23,7 +23,7 @@
        newElement.innerHTML = "message: " + e.data;
 
        var eventList = document.getElementById("eventList");
-       eventList.appendChild(newElement);
+       eventList.insertBefore(newElement, eventList.firstChild);
      }
 
     /**
